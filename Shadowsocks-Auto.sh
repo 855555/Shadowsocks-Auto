@@ -68,7 +68,7 @@ if [[ "$CURRENT_VERSION" != "$LATEST_TAG" ]]; then
         echo "发现新版本: $LATEST_TAG，当前版本: $CURRENT_VERSION"
     fi
     echo "正在下载最新版本..."
-    wget -q --show-progress "$LATEST_RELEASE_URL"
+    wget -q "$LATEST_RELEASE_URL"
     if [ $? -ne 0 ]; then
         echo "下载失败，请检查网络连接或稍后重试"
         exit 1
