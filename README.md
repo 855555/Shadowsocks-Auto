@@ -43,3 +43,6 @@ sudo rm /usr/local/bin/sslocal
 sudo rm /usr/local/bin/ssurl
 sudo rm /usr/local/bin/ssmanager
 ```
+
+## 项目参考
+https://github.com/shadowsocks/shadowsocks-rust
