@@ -1,5 +1,33 @@
 #!/bin/bash
 
+# 检查并安装xz工具
+check_xz() {
+    if ! command -v xz &> /dev/null; then
+        echo "检测到 xz 工具未安装，正在安装..."
+        if command -v apt &> /dev/null; then
+            apt update && apt install -y xz-utils
+        elif command -v yum &> /dev/null; then
+            yum install -y xz
+        elif command -v dnf &> /dev/null; then
+            dnf install -y xz
+        else
+            echo "无法确定包管理器，请手动安装 xz 工具"
+            exit 1
+        fi
+        
+        if [ $? -ne 0 ]; then
+            echo "xz 工具安装失败，请检查网络连接或手动安装"
+            exit 1
+        fi
+        echo "xz 工具安装成功"
+    else
+        echo "xz 工具已安装"
+    fi
+}
+
+# 在脚本开始时执行 xz 检查
+check_xz
+
 # 获取系统架构 (x86_64, i686, aarch64, armv7, arm)
 ARCH=$(uname -m)
 
