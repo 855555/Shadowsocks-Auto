@@ -169,19 +169,18 @@ case $encryption_choice in
             4) method="aes-256-gcm" ;;
             5) method="aes-128-gcm" ;;
             6) method="chacha20-ietf-poly1305" ;;
-            7) method="xchacha20-ietf-poly1305" ;;
-            8) method="none" ;;
-            9) method="aes-128-cfb" ;;
-            10) method="aes-192-cfb" ;;
-            11) method="aes-256-cfb" ;;
-            12) method="aes-128-ctr" ;;
-            13) method="aes-192-ctr" ;;
-            14) method="aes-256-ctr" ;;
-            15) method="camellia-128-cfb" ;;
-            16) method="camellia-192-cfb" ;;
-            17) method="camellia-256-cfb" ;;
-            18) method="rc4-md5" ;;
-            19) method="chacha20-ietf" ;;
+            7) method="none" ;;
+            8) method="aes-128-cfb" ;;
+            9) method="aes-192-cfb" ;;
+            10) method="aes-256-cfb" ;;
+            11) method="aes-128-ctr" ;;
+            12) method="aes-192-ctr" ;;
+            13) method="aes-256-ctr" ;;
+            14) method="camellia-128-cfb" ;;
+            15) method="camellia-192-cfb" ;;
+            16) method="camellia-256-cfb" ;;
+            17) method="rc4-md5" ;;
+            18) method="chacha20-ietf" ;;
             *)
                 echo "无效选项，使用默认方法: 2022-blake3-aes-256-gcm"
                 method="2022-blake3-aes-256-gcm"
