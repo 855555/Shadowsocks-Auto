@@ -21,7 +21,6 @@ get_public_ip() {
         echo "无法获取公网 IP 地址，将使用内网 IP 地址"
         public_ip=$(hostname -I | awk '{print $1}')
     fi
-    echo "$public_ip"
 }
 
 # 检查是否为 root 用户
