@@ -731,7 +731,7 @@ EOF
     local current_method=$(jq -r '.method' "$SS_CONFIG_PATH")
     local current_password=$(jq -r '.password' "$SS_CONFIG_PATH")
     local current_node_name=$(grep "节点名称:" "/etc/shadowsocks/info.txt" | cut -d ' ' -f 2-)
-	local public_ip=$(get_public_ip)
+	get_public_ip
     base64_password=$(echo -n "$current_method:$current_password" | base64 -w 0)
 	shadow_tls_config="{\"version\":\"3\",\"password\":\"${stls_password}\",\"host\":\"${tls_domain}\",\"port\":\"${listen_port}\",\"address\":\"${public_ip}\"}"
 	shadow_tls_base64=$(echo -n "${shadow_tls_config}" | base64 | tr -d '\n')
