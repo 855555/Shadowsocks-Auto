@@ -895,7 +895,7 @@ ss_links() {
     ss_port=$(jq -r '.server_port' "$SS_CONFIG_PATH")
     ss_password=$(jq -r '.password' "$SS_CONFIG_PATH")
     method=$(jq -r '.method' "$SS_CONFIG_PATH")
-    public_ip=$(get_public_ip)
+    get_public_ip
     # 获取节点名称
     node_name=$(grep "节点名称:" "/etc/shadowsocks/info.txt" | cut -d ' ' -f 2-)
     
